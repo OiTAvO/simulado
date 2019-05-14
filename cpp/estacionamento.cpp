@@ -3,8 +3,8 @@
 int main () {
     int C, N, i, j, vgs, val, aux,
         cmd[3], plcs[10005][2];
-    char in[20], *it, *ptr = &bff[0],
-         bff[1005], vagas[1005] = {0};
+    char in[20], bff[1005], vagas[1005] = {0},
+         *it, *ptr = &bff[0];
     
     while (~scanf("%d %d", &C, &N)) {
         vgs = C;
