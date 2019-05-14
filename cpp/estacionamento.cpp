@@ -1,11 +1,10 @@
 #include <bits/stdc++.h>
 
-static char bff[1005], vagas[1005] = {0};
-static int plcs[10005][2];
-
 int main () {
-    int C, N, i, j, cmd[3], vgs, val, aux;
-    char in[20], *it, *ptr = &bff[0];
+    int C, N, i, j, vgs, val, aux,
+        cmd[3], plcs[10005][2];
+    char in[20], *it, *ptr = &bff[0],
+         bff[1005], vagas[1005] = {0};
     
     while (~scanf("%d %d", &C, &N)) {
         vgs = C;
