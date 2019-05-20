@@ -2,18 +2,20 @@
 
 using namespace std;
 
-int main () {
-    int n, raiz;
-    string str, r_str, result = "";
-    
-    while (cin >> str && str[0] != '0') {
-        r_str = string(str.rbegin(), str.rend());
-	if (!!~str.find(r_str)) {
-            n = atoi(str.c_str());
-            raiz = sqrt(n);
-            cout << (n == raiz * raiz ? "S\n" : "N\n");
-        } else cout << "N\n";
-    }
-    return 0;
+int main() {
+  int number, rootInt, squaredRoot;
+  char bff[50];
+  string str, r_str;
+
+  while (scanf(" %d", &number) && number) {
+    str = string(itoa(number, bff, 10));
+    r_str = string(str.rbegin(), str.rend());
+    rootInt = sqrt(number);
+    squaredRoot = rootInt * rootInt - number;
+    if (!!~str.find(r_str) && !squaredRoot)
+      printf("S\n");
+    else
+      printf("N\n");
+  }
+  return 0;
 }
-            
