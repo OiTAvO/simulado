@@ -5,27 +5,33 @@ import std.algorithm;
 
 void main()
 {
-    string[] sHeap;
-    bool isMaxHeap, isNothing;
-    auto heap = map!(to!int)(sHeap);
+    string[] inputs;
+    bool isMaxHeap, isntMaxMin;
+    auto heap = map!(to!int)(inputs);
 
-    while ((sHeap = split(strip(readln()), " ")).length > 2)
+    while ((inputs = split(strip(readln()), " ")).length > 2)
     {
-        heap = map!(to!int)(sHeap[1 .. $]);
+        isntMaxMin = false;
+        heap = map!(to!int)(inputs[1 .. $]);
         isMaxHeap = (heap[$ - 1] <= heap[($ - 2) / 2]);
+
         for (int i = heap.length - 2; i > 0; --i)
         {
             if (isMaxHeap != (heap[i] <= heap[(i - 1) / 2]))
+            {
                 if (heap[i] != heap[(i - 1) / 2])
                 {
-                    writeln("nada");
-                    isNothing = true;
+                    isntMaxMin = true;
                     break;
                 }
+            }
         }
-        if (!isNothing)
-            writeln((isMaxHeap ? "max" : "min"));
+
+        if (isntMaxMin)
+            writeln("nada");
+        else if (isMaxHeap)
+            writeln("max");
         else
-            isNothing = false;
+            writeln("min");
     }
 }
