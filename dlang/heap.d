@@ -1,36 +1,31 @@
-import std.stdio;
-import std.algorithm;
 import std.conv;
+import std.stdio;
 import std.string;
+import std.algorithm;
 
 void main()
 {
-    bool flg, flg2;
     string[] sHeap;
+    bool isMaxHeap, isNothing;
+    auto heap = map!(to!int)(sHeap);
 
-    while (true)
+    while ((sHeap = split(strip(readln()), " ")).length > 2)
     {
-        sHeap = split(strip(readln()), " ");
-        if (sHeap == []) break;
-        if (sHeap.length > 1)
+        heap = map!(to!int)(sHeap[1 .. $]);
+        isMaxHeap = (heap[$ - 1] <= heap[($ - 2) / 2]);
+        for (int i = heap.length - 2; i > 0; --i)
         {
-            sHeap = sHeap[1 .. $];
-            auto heap = map!(to!int)(sHeap);
-            flg = (heap[$ - 1] <= heap[($ - 2) / 2]);
-            for (int i = heap.length - 1; i > 0; --i)
-            {
-                if (flg != (heap[i] <= heap[(i - 1) / 2]))
-                    if (heap[i] != heap[(i - 1) / 2])
-                    {
-                        writeln("nada");
-                        flg2 = true;
-                        break;
-                    }
-            }
-            if (!flg2)
-                writeln((flg ? "max" : "min"));
-
-            flg2 = false;
+            if (isMaxHeap != (heap[i] <= heap[(i - 1) / 2]))
+                if (heap[i] != heap[(i - 1) / 2])
+                {
+                    writeln("nada");
+                    isNothing = true;
+                    break;
+                }
         }
+        if (!isNothing)
+            writeln((isMaxHeap ? "max" : "min"));
+        else
+            isNothing = false;
     }
 }
