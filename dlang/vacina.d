@@ -1,20 +1,22 @@
-import std.stdio, std.string, std.algorithm;
+import std.stdio;
+import std.string;
+import std.algorithm;
 
 void main()
 {
-    string C, D, Z, temp;
-    int T, qtd, i;
+    string chikun, dengue, zika, dnaChain;
+    int chain, count, iter;
     
-    while (readf(" %s\n%s\n%s\n%s ", &C, &D, &Z, &T))
+    while (readf(" %s\n%s\n%s\n%s", &chikun, &dengue, &zika, &chain))
     {
-        for (qtd = i = 0; i + T <= C.length; ++i)
+        for (count = iter = 0; iter + chain <= chikun.length; ++iter)
         {
-            temp = C[i .. i + T];
-            if (canFind(D, temp) && canFind(Z, temp))
+            dnaChain = chikun[iter .. iter + chain];
+            if (canFind(dengue, dnaChain) && canFind(zika, dnaChain))
             {    
-                ++qtd;
+                ++count;
             }
         }
-        writeln(qtd);
+        writeln(count);
     }
 }
