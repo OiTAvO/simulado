@@ -4,9 +4,8 @@ $(H2 [oitavo](https://oitavo.github.io) /
      [simulado](https://oitavo.github.io/simulado) /
      [$(TITLE)](./vacina.html)
 )
-
+$(BR)
 ***********************************************************************
-
 # C++ source code:
 ---
 #include <bits/stdc++.h>
@@ -25,14 +24,13 @@ int main() {
     return 0;
 }
 ---
-
+$(BR)
 ************************************************************************
-
 # D source code:
 ---
-import std.stdio;  // entrada e saida padrao
-import std.string;  // split, strip
-import std.algorithm;  // canFind
+import std.stdio;
+import std.string;
+import std.algorithm;
 
 void main()
 {
