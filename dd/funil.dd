@@ -1,0 +1,32 @@
+Ddoc
+
+$(H2 [oitavo](https://oitavo.github.io) /
+     [simulado](https://oitavo.github.io/simulado) /
+     [$(TITLE)](./funil.html)
+)
+$(BR)
+***********************************************************************
+# C++ source code:
+---
+#include <bits/stdc++.h>
+
+int main () {
+    int n;
+    scanf("%d", &n);
+    printf("%d\n", (n - 1) * 2);
+    return 0;
+}
+---
+$(BR)
+************************************************************************
+# D source code:
+---
+import std.stdio;
+
+void main ()
+{
+	int n;
+	readf(" %s", &n);
+	writeln((n - 1) * 2);
+}
+---

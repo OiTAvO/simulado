@@ -1,0 +1,59 @@
+Ddoc
+
+$(H2 [oitavo](https://oitavo.github.io) /
+     [simulado](https://oitavo.github.io/simulado) /
+     [$(TITLE)](./capicua.html)
+)
+$(BR)
+***********************************************************************
+# C++ source code:
+---
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  int number, rootInt, squaredRoot;
+  char bff[50];
+  string str, r_str;
+
+  while (scanf(" %d", &number) && number) {
+    str = string(itoa(number, bff, 10));
+    r_str = string(str.rbegin(), str.rend());
+    rootInt = sqrt(number);
+    squaredRoot = rootInt * rootInt - number;
+    if (!!~str.find(r_str) && !squaredRoot)
+      printf("S\n");
+    else
+      printf("N\n");
+  }
+  return 0;
+}
+---
+$(BR)
+************************************************************************
+# D source code:
+---
+import std.stdio;
+import std.math;
+import std.algorithm;
+import std.conv;
+
+void main ()
+{
+    int number, rootInt, squaredRoot;
+    char[] str, r_str;
+
+    while(readf(" %s", number) && number)
+    {
+        str = to!(char[])(number);
+        r_str = str.dup.reverse();
+        rootInt = to!int(sqrt(to!double(number)));
+        squaredRoot = rootInt * rootInt - number;
+        if (canFind(str, r_str) && !squaredRoot)
+            writeln("S");
+        else
+            writeln("N");
+    }
+}
+---
