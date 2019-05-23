@@ -1,0 +1,55 @@
+Ddoc
+
+$(H2 [oitavo](https://oitavo.github.io) /
+     [simulado](https://oitavo.github.io/simulado) /
+     [$(TITLE)](./vacina.html)
+)
+
+***********************************************************************
+
+# C++ source code:
+---
+#include <bits/stdc++.h>
+
+int main() {
+    std::string C, D, Z, temp;
+    int T, qtd, i;
+    
+    while (std::cin >> C >> D >> Z >> T) {
+        for (qtd = i = 0; i + T <= C.size(); ++i) {
+            temp = C.substr(i, T);
+            if (!!~D.find(temp) && !!~Z.find(temp)) ++qtd;
+        }
+        std::cout << qtd << "\n";
+    }
+    return 0;
+}
+---
+
+************************************************************************
+
+# D source code:
+---
+import std.stdio;  // entrada e saida padrao
+import std.string;  // split, strip
+import std.algorithm;  // canFind
+
+void main()
+{
+    string chikun, dengue, zika, dnaSeg;
+    int segLen, count, iter;
+    
+    while (readf(" %s\n%s\n%s\n%s", &chikun, &dengue, &zika, &segLen))
+    {
+        for (count = iter = 0; iter + segLen <= chikun.length; ++iter)
+        {
+            dnaSeg = chikun[iter .. iter + segLen];
+            if (canFind(dengue, dnaSeg) && canFind(zika, dnaSeg))
+            {    
+                ++count;
+            }
+        }
+        writeln(count);
+    }
+}
+---
